@@ -10,4 +10,4 @@ ENTRYPOINT_PATH="$( cd "$(dirname "$0")"; pwd -P )"
 cd "$ENTRYPOINT_PATH"
 
 # pipenv run python app.py "$@"
-python app.py "$@"
+pipenv run python app.py "$@"

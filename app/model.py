@@ -2,7 +2,6 @@ import numpy as np
 from bs4 import BeautifulSoup
 import unidecode
 import contractions
-import spacy
 import re
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import TreebankWordTokenizer
@@ -12,7 +11,6 @@ import nltk
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-nlp = spacy.load('en_core_web_md')
 stopwords_set = set(stopwords.words('english'))
 lmtzr = WordNetLemmatizer()
 tokenizer = TreebankWordTokenizer()

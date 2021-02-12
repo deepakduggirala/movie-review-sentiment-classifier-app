@@ -31,7 +31,33 @@ https://realpython.com/pipenv-guide/
 ##### docker push docker.target.com/iag-ime/zscaler-sync
 `docker rmi $(docker images --filter "dangling=true" -q --no-trunc)`
 ### Run docker container
-`docker run --rm -p 3000:3000 movie-review-sentiment-classifier`
+`docker run --rm -p 80:80 movie-review-sentiment-classifier`
+
+## Stopping flask in docker
+https://github.com/docker/compose/issues/4199
 
 # Hosting
-https://www.reddit.com/r/docker/comments/bxvoak/free_docker_hosting/
+free https://www.reddit.com/r/docker/comments/bxvoak/free_docker_hosting/
+
+# Amazon Web Services
+Follow this guide: https://towardsdatascience.com/simple-way-to-deploy-machine-learning-models-to-cloud-fd58b771fdcf
+
+```
+sudo amazon-linux-extras install docker
+sudo yum install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+```
+
+
+I'm using the ubuntu vm as the aws vm had problems with running docker
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+
+```
+sudo apt-get install software-properties-common
+sudo apt-add-repository universe
+sudo apt-get update
+sudo apt-get install python3-pip
+```
+
+https://www.liquidweb.com/kb/how-to-install-pyenv-on-ubuntu-18-04/

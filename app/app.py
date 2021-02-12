@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import joblib
 from model import normalize_corpus
 import numpy as np
+import os
 DECISION_THRESHOLD = 0.5
 
 def load_model():
@@ -36,4 +37,4 @@ def predict():
     return jsonify(get_reponse_body(proba))
 
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0', port=80)
+    app.run(host= '0.0.0.0', port=int(os.environ.get('PORT', 8080)))

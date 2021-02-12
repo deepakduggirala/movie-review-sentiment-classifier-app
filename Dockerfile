@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.9-buster
 # Adds Pipfile and Pipefile.lock into the image in the /app folder.
 COPY Pipfile* /app/
 # Set the initial working directory for the image to the /app folder
@@ -6,14 +6,13 @@ WORKDIR /app
 # In conjuction with copying the Pipfile & Pipefile.lock above
 # this will install the pipenv tool, and then install all of the
 # defined dependencies for this application as part of the image.
-RUN pip install --upgrade pip pipenv && \
-    pipenv lock -v --keep-outdated --requirements > requirements.txt && \
-    pip install -r requirements.txt && \
-    spacy download en_core_web_md
-
 # RUN pip install --upgrade pip pipenv && \
-#     pipenv install --deploy && \
-#     spacy download en_core_web_md
+#     pipenv lock -v --keep-outdated --requirements > requirements.txt && \
+#     pip install -r requirements.txt
+
+RUN pip install --upgrade pip pipenv
+
+RUN pipenv install -v --deploy
 # The app folder is copied towards the end of the image creation
 # since it tends to change more often than the previous steps,
 # and therefore we can take advantage of Docker's caching to speed
@@ -29,4 +28,4 @@ ENTRYPOINT ["/app/entrypoint.sh"]
 # Advertise to the end user & Docker, that this image will listen on
 # port 8050.  This doesn't explicitly open the port up, but it's more
 # of a suggestion to people on how to use the image.
-EXPOSE 80
+EXPOSE 8080
