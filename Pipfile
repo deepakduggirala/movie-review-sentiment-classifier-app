@@ -9,8 +9,8 @@ numpy = "*"
 beautifulsoup4 = "*"
 unidecode = "*"
 contractions = "*"
-spacy = "*"
 nltk = "*"
+gunicorn = "*"
 scikit-learn = "*"
 
 [dev-packages]

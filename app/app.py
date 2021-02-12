@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
+from build_library.utils import normalize_corpus
 import joblib
-from model import normalize_corpus
 import numpy as np
 import os
 DECISION_THRESHOLD = 0.5
@@ -26,6 +26,11 @@ pipeline = load_model()
 # Create the flaks App
 app = Flask(__name__)
 
+@app.route("/")
+def hello_world():
+    name = os.environ.get("NAME", "World")
+    return "Hello {}!".format(name)
+
 # Define an endpoint for calling the predict function based on your ml library/framework
 @app.route("/predict", methods=["GET","POST"])
 def predict():
@@ -37,4 +42,5 @@ def predict():
     return jsonify(get_reponse_body(proba))
 
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+  print('running main in app.py')
+  app.run(debug=True, host= '0.0.0.0', port=int(os.environ.get('PORT', 8080)))
