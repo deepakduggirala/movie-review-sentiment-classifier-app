@@ -12,7 +12,7 @@ WORKDIR /app
 
 RUN pip install --upgrade pip pipenv
 
-RUN pipenv install -v --deploy
+RUN pipenv install --deploy
 # The app folder is copied towards the end of the image creation
 # since it tends to change more often than the previous steps,
 # and therefore we can take advantage of Docker's caching to speed

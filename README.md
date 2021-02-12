@@ -27,7 +27,7 @@ https://realpython.com/pipenv-guide/
 `pipenv run python app.py`
 
 ### Build docker container
-`docker build -t movie-review-sentiment-classifier .`
+`docker build -t us.gcr.io/movie-review-sentiment-clf/movie-review-sentiment-clf .`
 ##### docker push docker.target.com/iag-ime/zscaler-sync
 `docker rmi $(docker images --filter "dangling=true" -q --no-trunc)`
 ### Run docker container
