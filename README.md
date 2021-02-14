@@ -61,3 +61,6 @@ sudo apt-get install python3-pip
 ```
 
 https://www.liquidweb.com/kb/how-to-install-pyenv-on-ubuntu-18-04/
+
+# Google Cloud Run
+How to avoid pipeline errors when running with gunicorm: https://rebeccabilbro.github.io/module-main-has-no-attribute/
