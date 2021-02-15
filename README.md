@@ -1,5 +1,5 @@
 ```
-curl localhost:3000/predict -X POST -H 'content-type: application/json' -d '{"review": "N.T.R, Savitri, A.N.R in Mayabazar acted brilliantly. Dialogues look fresh!!!. Music and lyrics are super."}'
+curl https://movie-review-sentiment-clf-zrefb57tqq-uc.a.run.app/predict -X POST -H 'content-type: application/json' -d '{"review": "The Movie Was So Cool! I Want To Watch The Again And Again!"}'
 
 curl localhost:3000/predict -X POST --data "@reviews/review-1.json" -H 'content-type: application/json'
 ```

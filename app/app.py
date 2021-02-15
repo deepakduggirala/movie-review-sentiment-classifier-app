@@ -29,7 +29,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     name = os.environ.get("NAME", "World")
-    return "Hello {}!".format(name)
+    return "Hello {}!, GCP".format(name)
 
 # Define an endpoint for calling the predict function based on your ml library/framework
 @app.route("/predict", methods=["GET","POST"])
