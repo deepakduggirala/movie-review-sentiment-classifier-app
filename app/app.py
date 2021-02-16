@@ -3,6 +3,7 @@ from build_library.utils import normalize_corpus
 import joblib
 import numpy as np
 import os
+import time
 DECISION_THRESHOLD = 0.5
 
 def load_model():
@@ -18,9 +19,14 @@ def get_reponse_body(proba):
       'class': 'positive' if pos_proba > DECISION_THRESHOLD else 'negative'
   }
 
-# test_review = "N.T.R, Savitri, A.N.R in Mayabazar acted brilliantly. Dialogues look fresh!!!. Music and lyrics are super."
+test_review = "N.T.R, Savitri, A.N.R in Mayabazar acted brilliantly. Dialogues look fresh!!!. Music and lyrics are super."
+s=time.time()
 pipeline = load_model()
+print('time to load the model', time.time()-s)
 # print(pipeline.predict_proba(np.array([test_review])))
+# print('time to first prediction', time.time()-s)
+# print(pipeline.predict_proba(np.array([test_review])))
+# print('time to second prediction', time.time()-s)
 
 ### SETTING UP FLASK APP AND FLAKS ENDPOINTS ###
 # Create the flaks App

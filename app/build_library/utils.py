@@ -6,10 +6,10 @@ import re
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import TreebankWordTokenizer
 from nltk.corpus import stopwords
-import nltk
+# import nltk
 
-nltk.download('stopwords')
-nltk.download('wordnet')
+# nltk.download('stopwords')
+# nltk.download('wordnet')
 
 stopwords_set = set(stopwords.words('english'))
 lmtzr = WordNetLemmatizer()

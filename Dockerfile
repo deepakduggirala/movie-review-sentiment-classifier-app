@@ -15,7 +15,8 @@ COPY Pipfile* /app/
 # defined dependencies for this application as part of the image.
 RUN pip install --upgrade pip pipenv && \
     pipenv lock -v --keep-outdated --requirements > requirements.txt && \
-    pip install -r requirements.txt
+    pip install -r requirements.txt && \
+    python -c "import nltk;nltk.download('stopwords');nltk.download('wordnet')"
 
 # RUN pip install --upgrade pip pipenv && \
 #     pipenv install --deploy

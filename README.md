@@ -31,7 +31,7 @@ https://realpython.com/pipenv-guide/
 ##### docker push docker.target.com/iag-ime/zscaler-sync
 `docker rmi $(docker images --filter "dangling=true" -q --no-trunc)`
 ### Run docker container
-`docker run --rm -p 80:80 movie-review-sentiment-classifier`
+`docker run --rm -t -d -p 8080:8080 --env PORT=8080 us.gcr.io/movie-review-sentiment-clf/movie-review-sentiment-clf`
 
 ## Stopping flask in docker
 https://github.com/docker/compose/issues/4199
