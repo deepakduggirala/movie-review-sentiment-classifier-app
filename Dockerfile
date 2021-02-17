@@ -1,5 +1,4 @@
 FROM python:3.9-buster
-# Adds Pipfile and Pipefile.lock into the image in the /app folder.
 
 # Allow statements and log messages to immediately appear in the Knative logs
 ENV PYTHONUNBUFFERED True
@@ -8,6 +7,7 @@ ENV PYTHONUNBUFFERED True
 ENV APP_HOME /app
 WORKDIR $APP_HOME
 
+# Adds Pipfile and Pipefile.lock into the image in the /app folder.
 COPY Pipfile* /app/
 
 # In conjuction with copying the Pipfile & Pipefile.lock above
